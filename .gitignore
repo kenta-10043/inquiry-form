@@ -1,0 +1,11 @@
+# MySQLの秘密鍵・証明書ファイル
+docker/mysql/data/*.pem
+
+# Laravelの環境設定ファイル
+.env
+.env.local
+.env.*.backup
+
+# 他によく無視するものの例
+/vendor
+/node_modules

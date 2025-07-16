@@ -18,9 +18,9 @@ Laravel環境構築
 
 ## 使用技術  
 
-* PHP 8.0
+* PHP 8.3-fpm
 * Laravel 10.0
-* MySQL 8.0
+* MySQL 8.0.26
 
 ## URL  
 * 開発環境：http://localhost/

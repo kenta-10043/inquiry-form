@@ -1,0 +1,29 @@
+body{
+    color: #8B7969;
+
+}
+/* headr関連 */
+header{
+    width: 1512px;
+    height: 100px;
+    border: 1px;
+    border-color: #8B7969;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.header-inner{
+    text-decoration: none;
+    color: #8B7969;
+}
+
+.header__tittle{
+    font-weight: 400;
+    font-size: 40px;
+    font-family: 'Inika', serif;
+    line-height: 100%;
+    color: #8B7969;
+
+}

@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\CategoryController;
+// use App\Http\Controllers\CategoryController;
+
+use App\Http\Controllers\Admin\ContactAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +18,15 @@ use App\Http\Controllers\CategoryController;
 */
 
 Route::get('/', [ContactController::class, 'index']);
+
 Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
+
 Route::post('/store', [ContactController::class, 'store']);
 
-// Route::post('/contacts/confirm', [CategoryController::class, 'confirm']);
-// Route::post('/contacts/store', [CategoryController::class, 'store']);
+Route::middleware('auth')->group(
+    function () {
+        Route::get('/admin', [ContactAdminController::class, 'index']);
+
+        Route::get('/admin/search', [ContactAdminController::class, 'search']);
+    }
+);

@@ -21,9 +21,10 @@ class ContactController extends Controller
         ]);
 
 
+
         $name = $request->input('last_name') . '　' . $request->input('first_name');
         $tel = $request->input('tel1') . '-' . $request->input('tel2') . '-' . $request->input('tel3');
-        $contact = $request->only('last_name', 'first_name', 'gender', 'email', 'tel', 'address', 'building', 'detail');
+        $contact = $request->only('last_name', 'first_name', 'gender', 'email', 'address', 'building', 'detail');
         $contact['name'] = $name;
         $contact['tel'] = $tel;
 
@@ -32,7 +33,7 @@ class ContactController extends Controller
 
         return view('confirm', compact('contact', 'category'));
     }
-    public function store(ContactRequest $request)
+    public function store(Request $request)
     {
         $content = $request->only([
             'last_name',
@@ -49,6 +50,6 @@ class ContactController extends Controller
 
 
 
-        return redirect('/');
+        return view('thanks');
     }
 }

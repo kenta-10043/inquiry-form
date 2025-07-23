@@ -50,8 +50,8 @@
         <div>
             <label for="tel1">電話番号※</label>
             <input type="tel" id="tel1" name="tel1" placeholder="080" value="{{ old('tel1') }}">-
-            <input type="tel2" name="tel2" placeholder="1234" value="{{ old('tel2') }}">-
-            <input type="tel3" name="tel3" placeholder="5678" value="{{ old('tel3') }}">
+            <input type="tel" name="tel2" placeholder="1234" value="{{ old('tel2') }}">-
+            <input type="tel" name="tel3" placeholder="5678" value="{{ old('tel3') }}">
 
             @error('tel1')
                 <div>{{ $message }}</div>
@@ -93,11 +93,11 @@
             <label for="content">お問い合わせの種類※</label>
             <select id="content" name="content">
                 <option value="" selected hidden>選択してください</option>
-                <option value="1. 商品のお届けについて" @selected(old('content') == '1. 商品のお届けについて')>1. 商品のお届けについて</option>
-                <option value="2. 商品の交換について" @selected(old('content') == '2. 商品の交換について')>2. 商品の交換について</option>
-                <option value="3. 商品トラブル" @selected(old('content') == '3. 商品トラブル')>3. 商品トラブル</option>
-                <option value="4. ショップへのお問い合わせ" @selected(old('content') == '4. ショップへのお問い合わせ')>4. ショップへのお問い合わせ</option>
-                <option value="5.その他" @selected(old('content') == '5. その他')>5.その他</option>
+                <option value="商品のお届けについて" @selected(old('content') == '商品のお届けについて')>商品のお届けについて</option>
+                <option value="商品の交換について" @selected(old('content') == '商品の交換について')>商品の交換について</option>
+                <option value="商品トラブル" @selected(old('content') == '商品トラブル')>商品トラブル</option>
+                <option value="ショップへのお問い合わせ" @selected(old('content') == 'ショップへのお問い合わせ')>ショップへのお問い合わせ</option>
+                <option value="その他" @selected(old('content') == 'その他')>その他</option>
             </select>
             @error('content')
                 <div class="error">{{ $message }}</div>

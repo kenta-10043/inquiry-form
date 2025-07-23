@@ -83,7 +83,8 @@
         </table>
 
         <div>
-            <button type="submit">送信</button>
+            {{-- <button type="submit">送信</button> --}}
+            <input type="submit" value="送信">
             <button type="button" onclick="history.back()">修正</button>
         </div>
     </form>

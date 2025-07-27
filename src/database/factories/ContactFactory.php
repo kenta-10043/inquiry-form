@@ -22,7 +22,7 @@ class ContactFactory extends Factory
             'category_id' => $this->faker->numberBetween(1, 5),
             'last_name' => $this->faker->lastName,
             'first_name' => $this->faker->firstname,
-            'gender' => $this->faker->randomElement(['男性', '女性', 'その他']),
+            'gender' => $this->faker->randomElement([1, 2, 3]),
             'email' => $this->faker->unique()->safeEmail,
             'tel' => $this->faker->phoneNumber,
             'address' => $this->faker->address,

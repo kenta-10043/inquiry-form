@@ -66,22 +66,37 @@
             </tr>
             @foreach ($contacts as $contact)
                 <tr>
-                    <th>{{ $contact->last_name }} {{ $contact->first_name }} </th>
-                    <th>{{ $contact->gender }}</th>
-                    <th>{{ $contact->email }}</th>
-                    <th>{{ $contact->category->content }}</th>
-                    <th>
+                    <td>{{ $contact->last_name }} {{ $contact->first_name }} </td>
+                    <td>
+                        @if ($contact->gender == 1)
+                            男性
+                        @elseif($contact->gender == 2)
+                            女性
+                        @elseif($contact->gender == 3)
+                            その他
+                        @endif
+                    </td>
+                    <td>{{ $contact->email }}</td>
+                    <td>{{ $contact->category->content }}</td>
+                    <td>
                         <button onclick="openModal({{ $contact->id }})">詳細</button>
 
                         {{-- @livewire('modal', ['contact' => $contact]) --}}
-                    </th>
+                    </td>
                 </tr>
                 <!-- モーダル本体 -->
                 <div id="myModal-{{ $contact->id }}"" class="modal">
                     <div class="modal-content">
                         <span class="close-button" onclick="closeModal({{ $contact->id }} )">&times;</span>
                         <p>お名前　{{ $contact->last_name }} {{ $contact->first_name }}</p>
-                        <p> 性別　{{ $contact->gender }}</p>
+                        <p> 性別　@if ($contact->gender == 1)
+                                男性
+                            @elseif($contact->gender == 2)
+                                女性
+                            @elseif($contact->gender == 3)
+                                その他
+                            @endif
+                        </p>
                         <p> メールアドレス　{{ $contact->email }}</p>
                         <p> 電話番号　{{ $contact->tel }}</p>
                         <p> 住所　{{ $contact->address }}</p>

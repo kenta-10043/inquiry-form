@@ -22,7 +22,13 @@
             <tr>
                 <th>性別</th>
                 <td>
-                    {{ $contact['gender'] }}
+                    @if ($contact['gender'] == 1)
+                        男性
+                    @elseif ($contact['gender'] == 2)
+                        女性
+                    @elseif($contact['gender'] == 3)
+                        その他
+                    @endif
                     <input type="hidden" name="gender" value="{{ $contact['gender'] }}">
                     {{-- <input type="radio" name="gender" value="男性" {{ $contact['gender'] === '男性' ? 'checked' : '' }}
                         checked>男性

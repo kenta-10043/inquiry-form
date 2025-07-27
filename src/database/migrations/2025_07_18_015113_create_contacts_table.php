@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->string('last_name', 255);
             $table->string('first_name', 255);
-            $table->string('gender');
+            $table->tinyInteger('gender');
             $table->string('email', 255);
             $table->string('tel', 255);
             $table->string('address', 255);

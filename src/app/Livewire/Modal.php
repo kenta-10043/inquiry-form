@@ -9,6 +9,12 @@ class Modal extends Component
 {
     public $showModal = false;
 
+    public $contact;
+    public function mount($contact)
+    {
+        $this->contact = $contact;
+    }
+
     public function render()
     {
         return view('livewire.modal');

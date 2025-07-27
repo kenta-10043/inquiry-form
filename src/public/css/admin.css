@@ -7,3 +7,67 @@ svg.w-5.h-5 {
     width: 30px;
     height: 30px;
 }
+
+.search__reset-button{
+    border: 2px solid black;
+    background-color: #e3d8cd;
+    text-decoration: none;
+    color: black;
+    padding: 3px;
+}
+
+.parts{
+    display: flex;
+    margin: 20px 0;
+    justify-content: space-between;
+
+}
+
+.button__csv{
+    height: 30px;
+    text-decoration: none;
+    border: 1px solid black;
+    text-align: center;
+    background-color: #e3d8cd;
+    color: black;
+    padding: 0 10px;
+}
+
+
+
+.form{
+padding: 0 30px;
+}
+
+.pa{
+    margin:  0 30px;
+}
+
+.modal {
+    display: none;
+    /* 最初は非表示 */
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* 背景を暗くする */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.close-button {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}

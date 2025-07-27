@@ -16,6 +16,7 @@ class ContactController extends Controller
 
     public function confirm(ContactRequest $request)
     {
+        //$category=Category::where('content',$request->input('content'))->first();を実行してあれば$categoryに格納、なければCategory::create(['content'=>$request->input('content')]);でDBに保存し$categoryに格納　そうすることで$categoryでリクエストされたcontentが表示できるようになる
         $category = Category::firstOrCreate([
             'content' => $request->input('content')
         ]);

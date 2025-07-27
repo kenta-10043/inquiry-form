@@ -22,12 +22,14 @@
             <tr>
                 <th>性別</th>
                 <td>
-                    <input type="radio" name="gender" value="男性" {{ $contact['gender'] === '男性' ? 'checked' : '' }}
+                    {{ $contact['gender'] }}
+                    <input type="hidden" name="gender" value="{{ $contact['gender'] }}">
+                    {{-- <input type="radio" name="gender" value="男性" {{ $contact['gender'] === '男性' ? 'checked' : '' }}
                         checked>男性
                     <input type="radio" name="gender" value="女性"
                         {{ $contact['gender'] === '女性' ? 'checked' : '' }}>女性
                     <input type="radio" name="gender" value="その他"
-                        {{ $contact['gender'] === 'その他' ? 'checked' : '' }}>その他
+                        {{ $contact['gender'] === 'その他' ? 'checked' : '' }}>その他 --}}
                 </td>
             </tr>
 

@@ -17,19 +17,19 @@ class ContactFactory extends Factory
      */
     public function definition(): array
     {
+
         return [
             'category_id' => $this->faker->numberBetween(1, 5),
-            'last_name' => $this->faker->lastName(255),
-            'first_name' => $this->faker->firstname(255),
+            'last_name' => $this->faker->lastName,
+            'first_name' => $this->faker->firstname,
             'gender' => $this->faker->randomElement(['男性', '女性', 'その他']),
             'email' => $this->faker->unique()->safeEmail,
             'tel' => $this->faker->phoneNumber,
-            'address' => $this->faker->address(255),
-            'building' => $this->faker->optional()->secondaryAddress(255),
-            'detail' => $this->faker->text(200),
             'address' => $this->faker->address,
-            'building' => $this->faker->optional()->secondaryAddress(255),
-            'detail' => $this->faker->text(120),
+            'building' => $this->faker->optional()->secondaryAddress,
+            'detail' => $this->faker->text(200),
+            'created_at' => $this->faker->dateTimeBetween('-1 year', '+1 year'),
+
 
         ];
     }

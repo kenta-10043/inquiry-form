@@ -17,7 +17,14 @@
                         </h3>
                         <div class="mt-2">
                             <p class="text-sm text-gray-500">
-                                モーダルの内容をここに記述します。
+                                お名前　{{ $contact->last_name }} {{ $contact->first_name }}<br>
+                                {{ $contact->gender }}</br>
+                                {{ $contact->email }}<br>
+                                {{ $contact->tel }}</br>
+                                {{ $contact->address }}<br>
+                                {{ $contact->building }}</br>
+                                {{ $contact->category->content }}<br>
+                                {{ $contact->detail }}
                             </p>
                         </div>
                     </div>

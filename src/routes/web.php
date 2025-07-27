@@ -29,4 +29,10 @@ Route::middleware('auth')->group(
 
         Route::get('/admin/search', [ContactAdminController::class, 'search']);
     }
+
 );
+
+
+Route::get('/admin/export', [ContactAdminController::class, 'export'])->name('admin.export');
+
+Route::delete('/admin/{id}', [ContactAdminController::class, 'destroy'])->name('admin.destroy');

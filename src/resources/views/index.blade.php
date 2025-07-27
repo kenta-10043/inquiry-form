@@ -25,10 +25,10 @@
 
         <div>
             <label for="gender">性別※</label>
-            <input type="radio" id="gender" name="gender" value="男性"
+            <input type="radio" id="gender" name="gender" value="1"
                 {{ old('gender', '男性') === '男性' ? 'checked' : '' }} checked>男性
-            <input type="radio" name="gender" value="女性" {{ old('gender') === '女性' ? 'checked' : '' }}>女性
-            <input type="radio" name="gender" value="その他" {{ old('gender') === 'その他' ? 'checked' : '' }}>その他
+            <input type="radio" name="gender" value="2" {{ old('gender') === '女性' ? 'checked' : '' }}>女性
+            <input type="radio" name="gender" value="3" {{ old('gender') === 'その他' ? 'checked' : '' }}>その他
 
             @error('gender')
                 <div>{{ $message }}</div>

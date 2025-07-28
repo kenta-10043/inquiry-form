@@ -41,20 +41,17 @@
         </div>
 
         <div class="parts">
-            <a class="button__csv btn btn-success" href="{{ route('admin.export', request()->query()) }}">
-                CSVダウンロード
+            <a class="button__csv href="{{ route('admin.export', request()->query()) }}">
+                エクスポート
             </a>
-            {{ $contacts->links() }}
+            <span>{{ $contacts->links('pagination::bootstrap-5') }}</span>
         </div>
         @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
             </div>
         @endif
-        {{-- <div>
-            {{ $contacts->appends(request()->query())->links() }}
 
-        </div> --}}
 
         <table>
             <tr>

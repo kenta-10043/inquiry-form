@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\AuthRequest;
+use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Response;
 
@@ -39,8 +40,7 @@ class ContactAdminController extends Controller
             $query->whereDate('created_at', $request->created_at);
         }
 
-        $contacts = $query->paginate(7);
-
+        $contacts = $query->paginate(7)->appends($request->all());
         return view('admin.contacts.index', compact('contacts'));
     }
 
@@ -73,9 +73,19 @@ class ContactAdminController extends Controller
         // 3. データ行を組み立てる
         $csvData = [];
         foreach ($contacts as $contact) {
+
+            $genderText = '';
+            if ($contact->gender == 1) {
+                $genderText = '男性';
+            } elseif ($contact->gender == 2) {
+                $genderText = '女性';
+            } elseif ($contact->gender == 3) {
+                $genderText = 'その他';
+            }
+
             $csvData[] = [
                 $contact->last_name . $contact->first_name,
-                $contact->gender,
+                $genderText,
                 $contact->email,
                 optional($contact->category)->content ?? '',
 

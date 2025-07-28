@@ -41,8 +41,8 @@ class ContactRequest extends FormRequest
     {
         return
             [
-                'last_name.required' => '名前を入力してください',
-                'first_name.required' => '名前を入力してください',
+                'last_name.required' => '姓を入力してください',
+                'first_name.required' => '名を入力してください',
                 'gender.required' => '性別を入力してください',
                 'email.required' => 'メールアドレスを入力してください',
                 'email.email' => 'メールアドレスはメール形式で入力してください',

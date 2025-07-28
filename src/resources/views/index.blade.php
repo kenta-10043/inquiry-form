@@ -17,7 +17,7 @@
                 <div>{{ $message }}</div>
             @enderror
 
-            @error('last_name')
+            @error('first_name')
                 <div>{{ $message }}</div>
             @enderror
 

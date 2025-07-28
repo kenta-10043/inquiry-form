@@ -10,7 +10,7 @@
 
 @section('content')
     <h2>Register</h2>
-    <form method="POST" action="/register">
+    <form method="POST" action="/register" novalidate>
         @csrf
         <div>
             <label for="name">お名前</label>

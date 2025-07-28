@@ -11,15 +11,19 @@ class ContactController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $contacts = Contact::all();
+        $categories = Category::all();
+
+        return view('index', compact('contacts', 'categories'));
     }
 
     public function confirm(ContactRequest $request)
     {
         //$category=Category::where('content',$request->input('content'))->first();を実行してあれば$categoryに格納、なければCategory::create(['content'=>$request->input('content')]);でDBに保存し$categoryに格納　そうすることで$categoryでリクエストされたcontentが表示できるようになる
-        $category = Category::firstOrCreate([
-            'content' => $request->input('content')
-        ]);
+        // $category = Category::firstOrCreate([
+        //     'content' => $request->input('content')
+        // ]);
+        $category = Category::find($request->input('category_id'));
 
 
 

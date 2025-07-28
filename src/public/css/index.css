@@ -1,3 +1,42 @@
-h2{
+.page-tittle{
    font-family: 'Inika', serif;
+   text-align: center;
 }
+
+.form__main{
+    width: 972.0014038085938;
+    height: 606;
+    top: 247px;
+    left: 273px;
+    border-width: 1px;
+    angle: 0 deg;
+    opacity: 1;
+
+}
+
+.form__main-content{
+text-align: left;
+
+}
+.form__input__name{
+
+
+}
+
+.label__name{
+
+}
+
+
+.input__name{
+
+}
+
+.form__input__gender
+.form__input__tel
+.form__input__address
+.form__input__building
+
+.form__input__content
+.form__input__detail
+.confirm__button
